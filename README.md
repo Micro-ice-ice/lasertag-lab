@@ -51,6 +51,8 @@ Remove-Item Env:BASE_PATH
 
 Репозиторий: [Micro-ice-ice/lasertag-lab](https://github.com/Micro-ice-ice/lasertag-lab). Публикация запускается при отправке изменений в `main`, вручную или по расписанию.
 
+Адрес сайта: [micro-ice-ice.github.io/lasertag-lab](https://micro-ice-ice.github.io/lasertag-lab/). Состояние публикации доступно во вкладке [Actions](https://github.com/Micro-ice-ice/lasertag-lab/actions/workflows/pages.yml).
+
 1. Загрузите проект в репозиторий GitHub, включая `static/data/`, `package-lock.json` и `.github/workflows/pages.yml`.
 2. В Settings → Pages выберите Source: GitHub Actions.
 3. Убедитесь, что workflow находится в основной ветке, и запустите **Publish to GitHub Pages** через Run workflow.
