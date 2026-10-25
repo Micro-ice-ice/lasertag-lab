@@ -1,0 +1,66 @@
+name: Publish to GitHub Pages
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17,47 * * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run check && npm test
+      - name: Restore downloaded games
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            static/data/catalog.json
+            static/data/games
+          key: ifled-games-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: ifled-games-v1-
+      - name: Synchronize public IFLED games
+        run: npm run sync:games
+      - name: Cache synchronized games
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            static/data/catalog.json
+            static/data/games
+          key: ifled-games-v1-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Build with repository base path
+        shell: bash
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          if [[ "$REPO_NAME" == *.github.io ]]; then
+            BASE_PATH="" npm run build
+          else
+            BASE_PATH="/$REPO_NAME" npm run build
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

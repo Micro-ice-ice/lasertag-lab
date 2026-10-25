@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "synced_at": "2026-10-25T01:15:50.442Z",
+  "games": [
+    {
+      "game_id": "0WRW9Hw4",
+      "game_date": "2026-10-21",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 12,
+      "uploaded_at": "2026-10-21T22:54:47+03:00",
+      "source_revision": "94b3af3beecbbc718b15311d948d040cf2bd74b908a6b62c9b4254f938673852",
+      "revision": "a53b31687c27cf558eb1fb154ee9d5832611873c1fd9338e5132cb1b1f491f6d"
+    },
+    {
+      "game_id": "roaDGdhR",
+      "game_date": "2026-10-16",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 17,
+      "uploaded_at": "2026-10-16T23:15:28+03:00",
+      "source_revision": "2292546bcd3ad546c8a2445a60e6963c511e011ca0bcc7b846c8f4737a01ab3d",
+      "revision": "093e41243a5893cdf7e2041960b7369a6467cd5fd2ebf51f8533a29425ef592d"
+    },
+    {
+      "game_id": "BPTRBeax",
+      "game_date": "2026-10-14",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 13,
+      "uploaded_at": "2026-10-14T22:18:25+03:00",
+      "source_revision": "f16ae1788e65391b753dd0898827f2bdf2f8fcf5ec275736d259907e97b18fd9",
+      "revision": "6ee48e0810c972bb00aa8b1f01b7ea6ee2d66fbb18f46784685667eaa6ef613e"
+    },
+    {
+      "game_id": "aZ0dpB6H",
+      "game_date": "2026-10-09",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 24,
+      "uploaded_at": "2026-10-10T01:31:59+03:00",
+      "source_revision": "220a67fadef16e66890433860b3dfe59b0ad58b89f7c7fbe407e04bbaa27cd80",
+      "revision": "6e0c591443d643b7437e69c83f6c6613db6f00aa7591b1a8cc6b312f73b1268b"
+    },
+    {
+      "game_id": "qXJ9kHjs",
+      "game_date": "2026-10-07",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 12,
+      "uploaded_at": "2026-10-07T23:37:45+03:00",
+      "source_revision": "e62bad56160565578b514a52b0702352e30fe49ad307e03707e2a3105256318c",
+      "revision": "bb9e6d903e0944d99630429751d4b61a15a0d61e7971941a833aa03ed3d74d6b"
+    },
+    {
+      "game_id": "KrEjIF0J",
+      "game_date": "2026-10-06",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 6,
+      "uploaded_at": "2026-10-08T00:11:57+03:00",
+      "source_revision": "0115fec2d1605c6abfcb8a4c6ed9e090d7c4660d4b8b1b0bfd7782db5329825a",
+      "revision": "4879303c476c028c2a5347ffa6b63356c3f53eba7b54cdcf9f8b497ac4591275"
+    },
+    {
+      "game_id": "64B6xTrF",
+      "game_date": "2026-10-02",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 21,
+      "uploaded_at": "2026-10-02T23:16:32+03:00",
+      "source_revision": "6d1fef8c2ac86df7ab8527f0db5a700aa1c1c303300e16b4859db6430e227091",
+      "revision": "f7106a2d480827f68592ea07401d967ced126257a01a6798dff2f5c311fecf1b"
+    },
+    {
+      "game_id": "ROHQ4v8G",
+      "game_date": "2026-09-25",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 21,
+      "uploaded_at": "2026-09-26T01:36:03+03:00",
+      "source_revision": "9df3fe500b1d315f370acdd98f596f453fd1f8e128d09f48f5beb32eeb6509ee",
+      "revision": "9db76fa4b8c4e8b916876e349abd56ceaf20858b76c68d7a9b7e96a010fe29e9"
+    },
+    {
+      "game_id": "o3awjPZW",
+      "game_date": "2026-09-23",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 10,
+      "uploaded_at": "2026-09-23T22:41:01+03:00",
+      "source_revision": "8c3f4570d48cabc88e22259599b78eb4b4a7bb2e3f0e9e251cf55982c8b9f922",
+      "revision": "6e8328f2bd89bc36c1aba0e4aa0fd3c73780b1e296f886f137fdc08f9e2b046e"
+    },
+    {
+      "game_id": "KKYMMSou",
+      "game_date": "2026-09-18",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 18,
+      "uploaded_at": "2026-09-18T23:03:35+03:00",
+      "source_revision": "a335616e2ba510c212ec51c1a956bb74a24b67530220a78c0387c6731163e30a",
+      "revision": "46ceccaa7dec7db9bb60c4df6ee4c2772b07e2b93b6543ef3d99d7fa3a7664f1"
+    },
+    {
+      "game_id": "umIW0aaF",
+      "game_date": "2026-09-11",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 25,
+      "uploaded_at": "2026-09-11T23:32:52+03:00",
+      "source_revision": "7afd3f6370a8d6d6b0c8315a8c41b2fe9823746f3b6ea5a65cb5d2081b1e034d",
+      "revision": "274717e7661e019d4802bc515f755cbae60e8cd40e98c5a8516c2ddaba7ea6df"
+    },
+    {
+      "game_id": "PrVeOMGs",
+      "game_date": "2026-09-09",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 15,
+      "uploaded_at": "2026-09-09T22:11:20+03:00",
+      "source_revision": "d9b900a966afd012df223b9b7f3e284230c81549a3a8ad10684ebe16bae043c6",
+      "revision": "018bfec3d3be99c1479b7468f8c83be977a1f7f911ed1dd83a921842fdfb8482"
+    },
+    {
+      "game_id": "qeOncgDj",
+      "game_date": "2026-09-04",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 20,
+      "uploaded_at": "2026-09-04T23:04:02+03:00",
+      "source_revision": "99a263d546be1d0092dd5600cce4e294376b56c5063e2b9e7790c6caf5b61d9a",
+      "revision": "3682d9fd7891415f6d264328a7c68a99b7d1d3a4d8ca583940c8be2f7fd54d55"
+    },
+    {
+      "game_id": "rGV1fcuI",
+      "game_date": "2026-08-19",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 17,
+      "uploaded_at": "2026-08-19T22:10:09+03:00",
+      "source_revision": "9d398ada7a52475c9dd47ce620620f59f8b5d0c9de49dd516118668bc1c2f4d7",
+      "revision": "fc4476d11af129278185540315b431fbe8f414816c976e5e1d8c637da928f30c"
+    },
+    {
+      "game_id": "vZLr9QEe",
+      "game_date": "2026-08-14",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 16,
+      "uploaded_at": "2026-08-15T00:50:59+03:00",
+      "source_revision": "8f0922dc0d170e7c2b3bb3d269bd197519f784dcdd7ae005f29882219cccd36b",
+      "revision": "f3c36e740fec631b1951fd209dd42d0cadeeb420f561c505e0e8ada80eb14324"
+    },
+    {
+      "game_id": "s8mdc1e3",
+      "game_date": "2026-08-12",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 10,
+      "uploaded_at": "2026-08-12T22:00:50+03:00",
+      "source_revision": "8272991e8faf16902ea474cbe050de42a86922fd88d33202a63a7047d48bb069",
+      "revision": "ca6a6ad71245a364d25ba5adbd2bb79212e413d677b50dc56a16e8b7c36c6bc5"
+    },
+    {
+      "game_id": "tIOEkn3x",
+      "game_date": "2026-08-07",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 12,
+      "uploaded_at": "2026-08-08T01:58:26+03:00",
+      "source_revision": "d6dda270839eaa69366c84cffc69477e1857ec15c49aadfef96357ad696224ca",
+      "revision": "e97fc4aff672150e20c7cb37adc0df2f6a4112adcb5dea96148e424fc05a2886"
+    },
+    {
+      "game_id": "cNQNwvsI",
+      "game_date": "2026-08-05",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 13,
+      "uploaded_at": "2026-08-05T22:08:22+03:00",
+      "source_revision": "6bc14e51bd5c71aa37c8dffa9e2f013c13564819c2b641d9cd4fe05e8431fb74",
+      "revision": "5cce4b8332c39e9ff6ddb62386d4cc1d079e9d5e74c5bd2ec74a88734e73f34e"
+    },
+    {
+      "game_id": "u0Bu2iJG",
+      "game_date": "2026-07-31",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 11,
+      "uploaded_at": "2026-08-05T19:03:31+03:00",
+      "source_revision": "1c9028579aa46c78b3a7f409dbb696ffedd54d44892b67afd715af7dd6ca20fc",
+      "revision": "7076c0bf72a1d1609c86d7245c90829cf87fc1ec87ef9408968225deea6763ae"
+    },
+    {
+      "game_id": "jbtCsLlw",
+      "game_date": "2026-07-24",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 17,
+      "uploaded_at": "2026-07-24T23:17:20+03:00",
+      "source_revision": "e6a6a4cf457fb283a20ab23c947c849e1a7ff83ef0ae0378d76388898d5cd290",
+      "revision": "a0f32becf1a367b99e5061a5d37f81db7bc3eed92bf8f6ed91d56837ac117ce8"
+    },
+    {
+      "game_id": "3ybTLVC0",
+      "game_date": "2026-07-22",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 17,
+      "uploaded_at": "2026-07-22T22:09:06+03:00",
+      "source_revision": "bd22b7fe886ca3ad02348bf0b182fb0b59a75e4ca78f6a0dbfd7285c47e80d98",
+      "revision": "2f7b370c1597df8db56936dcae7ef1e8f0f5baeaec06a14c408b4b41ef40b58a"
+    },
+    {
+      "game_id": "ErGa4XI0",
+      "game_date": "2026-07-17",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 15,
+      "uploaded_at": "2026-07-17T23:06:08+03:00",
+      "source_revision": "8e61dea87dc0bf21155bd1063f2bf0b9e3847b9d43ccd72b2958fc02944a3c8e",
+      "revision": "aec26d56afa6570c675de420ab4064bf4e9a8b142b2898b34f21edde975fe20f"
+    },
+    {
+      "game_id": "Kbvh5qgI",
+      "game_date": "2026-07-15",
+      "venue_name": "Медведь Петровско-Разумовская",
+      "player_count": 15,
+      "uploaded_at": "2026-07-15T22:03:45+03:00",
+      "source_revision": "899a4f7430aff0db56f7050f7e1bdf6bfeb89f3df5f0761738023c86339f81c2",
+      "revision": "451d7f88ac74b69d55d60acd3360a37842cc32ab7c24b585d030f9dfe7521914"
+    }
+  ]
+}
