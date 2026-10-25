@@ -6,14 +6,13 @@
   let selected = $state('');
   let mine = $state('');
   let query = $state('');
-  let sort = $state('LabRating');
-  let direction = $state('desc');
+  let sort = $state('Name');
   let opponentQuery = $state('');
   let duelSort = $state('total');
   let duelDirection = $state('desc');
   let filter = $state('all');
   let copyStatus = $state('');
-  const players = $derived(sortPlayers(game.players, sort, direction, query));
+  const players = $derived(sortPlayers(game.players, sort, sort === 'Name' ? 'asc' : 'desc', query));
   const profile = $derived(playerProfile(game, selected));
   const duelColumns = [{ key: 'to', label: 'Участник' }, { key: 'hits', label: 'Нанёс' },
     { key: 'received', label: 'Получил' }, { key: 'balance', label: 'Баланс' }, { key: 'total', label: 'Всего' }];
@@ -84,17 +83,15 @@
   <div class="toolbar">
     <label class="search-field">Поиск игрока<input type="search" bind:value={query} placeholder="Ваш позывной" /></label>
     <label>Сортировать по<select bind:value={sort}><option value="Name">Позывной</option>{#each playerMetrics as m}<option value={m.key}>{m.label}</option>{/each}</select></label>
-    <label>Порядок<select bind:value={direction}><option value="desc">По убыванию</option><option value="asc">По возрастанию</option></select></label>
-    <button class="text-button" onclick={() => { query = ''; sort = 'LabRating'; direction = 'desc'; }}>Сбросить</button>
   </div>
   <div class="player-picker" aria-label="Выбор игрока">
-    {#each players as p}<button id={`player=${p.Name}`} class:active={selected === p.Name} aria-pressed={selected === p.Name} onclick={() => openPlayer(p.Name)}><span>{p.Name}{mine === p.Name ? ' · я' : ''}</span><small>{sort === 'Name' ? `${format(p.AllHits)} поп.` : format(playerValue(p, sort), sort)}</small></button>{/each}
+    {#each players as p}<button id={`player=${p.Name}`} class:active={selected === p.Name} aria-pressed={selected === p.Name} onclick={() => openPlayer(p.Name)}><span>{p.Name}{mine === p.Name ? ' · я' : ''}</span>{#if sort !== 'Name'}<small>{format(playerValue(p, sort), sort)}</small>{/if}</button>{/each}
   </div>
-  {#if !players.length}<p class="empty-state" role="status">Игрок не найден. Попробуйте другой позывной или сбросьте поиск.</p>{/if}
+  {#if !players.length}<p class="empty-state" role="status">Игрок не найден. Измените позывной или очистите поиск.</p>{/if}
 
   <div id="player-profile" class="profile-anchor">
     {#if profile}
-      <div class="profile-heading section-head"><div><p class="eyebrow">Профиль игрока / Эта игра</p><h2 class="profile-name">{profile.player.Name}</h2></div><div class="profile-actions"><button class="action-button" aria-pressed={mine === selected} onclick={remember}>{mine === selected ? '✓ Это мой профиль' : 'Это я · запомнить'}</button><button class="action-button" onclick={copyLink}>Поделиться ↗</button></div></div>
+      <div class="profile-heading section-head"><div><p class="eyebrow">Профиль игрока / Эта игра</p><h2 class="profile-name">{profile.player.Name}</h2></div><div class="profile-actions"><button class="action-button" aria-pressed={mine === selected} onclick={remember}>{mine === selected ? '✓ Это мой профиль' : 'Это я · запомнить'}</button><button class="action-button icon-button" onclick={copyLink} aria-label="Поделиться профилем" title="Скопировать ссылку на профиль"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.5 6.8-4m-6.8 7 6.8 4"/></svg></button></div></div>
       <p class="subtle profile-hint">Выбор «Это я» сохраняется в этом браузере. Профили доступны всем по ссылке.</p>
       <p class="copy-status" role="status">{copyStatus}</p>
       <div class="profile-metrics">
