@@ -37,6 +37,11 @@ export function analyseGame(raw) {
     const incoming = p.Hits.reduce((s, h) => s + h.hitsIn, 0);
     if (out !== p.AllHits || incoming !== p.Wounds) issues.push(`Не сходятся итоги: ${p.Name}`);
   }
+  const averageHits = players.reduce((sum, p) => sum + p.Hits.reduce((s, h) => s + h.hitsOut, 0), 0) / players.length;
+  for (const p of players) {
+    p.LabRatingDetails = labRatingFor(p, averageHits);
+    p.LabRating = p.LabRatingDetails.score;
+  }
   return {
     metadata: raw.game_metadata ?? {}, players, pairs, issues,
     duels: duels.sort((a, b) => b.total - a.total),
@@ -50,6 +55,7 @@ export function pairFor(game, from, to) {
 }
 
 export const playerMetrics = [
+  { key: 'LabRating', label: 'Рейтинг Lab' },
   { key: 'AllHits', label: 'Попадания' },
   { key: 'balance', label: 'Баланс' },
   { key: 'Accuracy', label: 'Точность' },
@@ -66,8 +72,36 @@ export function playerValue(player, key) {
 export function sortPlayers(players, key = 'AllHits', direction = 'desc', query = '') {
   const search = query.trim().toLocaleLowerCase('ru-RU');
   return players.filter(p => p.Name.toLocaleLowerCase('ru-RU').includes(search)).sort((a, b) => {
+    if (key !== 'Name') {
+      const aKnown = Number.isFinite(playerValue(a, key));
+      const bKnown = Number.isFinite(playerValue(b, key));
+      if (aKnown !== bKnown) return aKnown ? -1 : 1;
+    }
     const order = key === 'Name' ? a.Name.localeCompare(b.Name, 'ru') : playerValue(a, key) - playerValue(b, key);
     return (direction === 'asc' ? order : -order) || a.Name.localeCompare(b.Name, 'ru');
+  });
+}
+
+// Lab v1 compares results within one game. Only recorded exchanges are used.
+// Neutral priors prevent a tiny number of hits/duels from dominating the score.
+export function labRatingFor(player, averageHits) {
+  const active = (player.Hits ?? []).filter(h => h.hitsOut + h.hitsIn > 0);
+  const hits = active.reduce((sum, h) => sum + h.hitsOut, 0);
+  const received = active.reduce((sum, h) => sum + h.hitsIn, 0);
+  if (hits + received === 0) return { score: null, exchange: null, activity: null, duels: null, pairs: 0 };
+  const ahead = active.filter(h => h.hitsOut > h.hitsIn).length;
+  const tied = active.filter(h => h.hitsOut === h.hitsIn).length;
+  const exchange = (hits + 25) / (hits + received + 50);
+  const activity = hits + averageHits > 0 ? hits / (hits + averageHits) : 0.5;
+  const duels = (ahead + 0.5 * tied + 2) / (active.length + 4);
+  const score = Math.round(1000 * (0.6 * exchange + 0.25 * activity + 0.15 * duels)) / 10;
+  return { score, exchange, activity, duels, pairs: active.length };
+}
+
+export function sortDuels(duels, key = 'total', direction = 'desc') {
+  return [...duels].sort((a, b) => {
+    const order = key === 'to' ? a.to.localeCompare(b.to, 'ru') : a[key] - b[key];
+    return (direction === 'asc' ? order : -order) || a.to.localeCompare(b.to, 'ru');
   });
 }
 
