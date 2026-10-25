@@ -49,7 +49,7 @@ Remove-Item Env:BASE_PATH
 
 ## Публикация на GitHub Pages
 
-Публикация из этой рабочей папки ещё не выполнялась; Git-репозиторий и подключение к GitHub здесь не настроены.
+Репозиторий: [Micro-ice-ice/lasertag-lab](https://github.com/Micro-ice-ice/lasertag-lab). Публикация запускается при отправке изменений в `main`, вручную или по расписанию.
 
 1. Загрузите проект в репозиторий GitHub, включая `static/data/`, `package-lock.json` и `.github/workflows/pages.yml`.
 2. В Settings → Pages выберите Source: GitHub Actions.
